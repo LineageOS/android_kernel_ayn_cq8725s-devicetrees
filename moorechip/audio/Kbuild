@@ -1,0 +1,8 @@
+DTC_INCLUDE += $(srctree)/../cq8725s-modules/qcom/opensource/audio-kernel/include
+
+dtbo-$(CONFIG_ARCH_SUN) += ../../qcom/audio/sun-audio.dtbo \
+		sun-audio-ayn-odin3.dtbo
+
+ always-y    := $(dtb-y) $(dtbo-y)
+ subdir-y    := $(dts-dirs)
+ clean-files    := *.dtb *.dtbo
