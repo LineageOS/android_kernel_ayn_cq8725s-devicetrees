@@ -1,0 +1,303 @@
+#include <dt-bindings/leds/common.h>
+
+&soc {
+	htr3212l_reg: htr3212l_reg {
+		compatible = "regulator-fixed";
+		regulator-name = "htr3212l_reg";
+		regulator-min-microvolt = <3300000>;
+		regulator-max-microvolt = <3300000>;
+		enable-active-high;
+		gpio = <&tlmm 87 GPIO_ACTIVE_HIGH>;
+    	vin-supply = <&joystick_vdd_reg>;
+	};
+};
+
+&qupv3_hub_i2c4 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+	status = "ok";
+
+	htr3212l: htr3212l@3c {
+		compatible = "yongfukang,htr3212";
+		reg = <0x3c>;
+		vdd-supply = <&htr3212l_reg>;
+
+		multi-led@0 {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <0>;
+			color = <LED_COLOR_ID_MULTI>;
+			label = "left:stick:0";
+
+			led@0 {
+				reg = <0>;
+				color = <LED_COLOR_ID_RED>;
+			};
+
+			led@1 {
+				reg = <1>;
+				color = <LED_COLOR_ID_GREEN>;
+			};
+
+			led@2 {
+				reg = <2>;
+				color = <LED_COLOR_ID_BLUE>;
+			};
+		};
+
+		multi-led@1 {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <1>;
+			color = <LED_COLOR_ID_MULTI>;
+			label = "left:stick:1";
+
+			led@3 {
+				reg = <3>;
+				color = <LED_COLOR_ID_RED>;
+			};
+
+			led@4 {
+				reg = <4>;
+				color = <LED_COLOR_ID_GREEN>;
+			};
+
+			led@5 {
+				reg = <5>;
+				color = <LED_COLOR_ID_BLUE>;
+			};
+		};
+
+		multi-led@2 {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <2>;
+			color = <LED_COLOR_ID_MULTI>;
+			label = "left:stick:2";
+
+			led@6 {
+				reg = <6>;
+				color = <LED_COLOR_ID_RED>;
+			};
+
+			led@7 {
+				reg = <7>;
+				color = <LED_COLOR_ID_GREEN>;
+			};
+
+			led@8 {
+				reg = <8>;
+				color = <LED_COLOR_ID_BLUE>;
+			};
+		};
+
+		multi-led@3 {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <3>;
+			color = <LED_COLOR_ID_MULTI>;
+			label = "left:stick:3";
+
+			led@9 {
+				reg = <9>;
+				color = <LED_COLOR_ID_RED>;
+			};
+
+			led@10 {
+				reg = <10>;
+				color = <LED_COLOR_ID_GREEN>;
+			};
+
+			led@11 {
+				reg = <11>;
+				color = <LED_COLOR_ID_BLUE>;
+			};
+		};
+	};
+};
+
+&soc {
+	htr3212r_reg: htr3212r_reg {
+		compatible = "regulator-fixed";
+		regulator-name = "htr3212r_reg";
+		regulator-min-microvolt = <3300000>;
+		regulator-max-microvolt = <3300000>;
+		enable-active-high;
+		gpio = <&tlmm 88 GPIO_ACTIVE_HIGH>;
+    	vin-supply = <&joystick_vdd_reg>;
+	};
+};
+
+&qupv3_hub_i2c3 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+	status = "ok";
+
+	htr3212r: htr3212r@3c {
+		compatible = "yongfukang,htr3212";
+		reg = <0x3c>;
+		vdd-supply = <&htr3212r_reg>;
+
+		multi-led@0 {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <0>;
+			color = <LED_COLOR_ID_MULTI>;
+			label = "right:stick:0";
+
+			led@0 {
+				reg = <0>;
+				color = <LED_COLOR_ID_RED>;
+			};
+
+			led@1 {
+				reg = <1>;
+				color = <LED_COLOR_ID_GREEN>;
+			};
+
+			led@2 {
+				reg = <2>;
+				color = <LED_COLOR_ID_BLUE>;
+			};
+		};
+
+		multi-led@1 {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <1>;
+			color = <LED_COLOR_ID_MULTI>;
+			label = "right:stick:1";
+
+			led@3 {
+				reg = <3>;
+				color = <LED_COLOR_ID_RED>;
+			};
+
+			led@4 {
+				reg = <4>;
+				color = <LED_COLOR_ID_GREEN>;
+			};
+
+			led@5 {
+				reg = <5>;
+				color = <LED_COLOR_ID_BLUE>;
+			};
+		};
+
+		multi-led@2 {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <2>;
+			color = <LED_COLOR_ID_MULTI>;
+			label = "right:stick:2";
+
+			led@6 {
+				reg = <6>;
+				color = <LED_COLOR_ID_RED>;
+			};
+
+			led@7 {
+				reg = <7>;
+				color = <LED_COLOR_ID_GREEN>;
+			};
+
+			led@8 {
+				reg = <8>;
+				color = <LED_COLOR_ID_BLUE>;
+			};
+		};
+
+		multi-led@3 {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <3>;
+			color = <LED_COLOR_ID_MULTI>;
+			label = "right:stick:3";
+
+			led@9 {
+				reg = <9>;
+				color = <LED_COLOR_ID_RED>;
+			};
+
+			led@10 {
+				reg = <10>;
+				color = <LED_COLOR_ID_GREEN>;
+			};
+
+			led@11 {
+				reg = <11>;
+				color = <LED_COLOR_ID_BLUE>;
+			};
+		};
+	};
+};
+
+&soc {
+	joystick_vdd_reg: joystick_vdd_reg {
+		compatible = "regulator-fixed";
+		regulator-name = "joystick_vdd_reg";
+		regulator-min-microvolt = <3300000>;
+		regulator-max-microvolt = <3300000>;
+		enable-active-high;
+		gpio = <&tlmm 83 GPIO_ACTIVE_HIGH>;
+	};
+
+	// AW3911
+	joystick_levelshifter_reg: joystick_levelshifter_reg {
+		compatible = "regulator-fixed";
+		regulator-name = "joystick_levelshifter_reg";
+		regulator-min-microvolt = <1800000>;
+		regulator-max-microvolt = <1800000>;
+		enable-active-high;
+		gpio = <&tlmm 85 GPIO_ACTIVE_HIGH>;
+	};
+};
+
+&tlmm {
+	m0_key: m0_key {
+		m0_key_default: m0_key_default {
+			mux {
+				pins = "gpio3";
+				function = "gpio";
+			};
+			config {
+				pins = "gpio3";
+				drive_strength = <2>;
+				bias-disable;
+			};
+		};
+	};
+
+	m1_key: m1_key {
+		m1_key_default: m1_key_default {
+			mux {
+				pins = "gpio7";
+				function = "gpio";
+			};
+			config {
+				pins = "gpio7";
+				drive_strength = <2>;
+				bias-disable;
+			};
+		};
+	};
+};
+
+&qupv3_se15_2uart {
+	status = "okay";
+
+	joystick: joystick {
+		status = "okay";
+		compatible = "moorechip,joystick";
+		vdd-supply = <&joystick_vdd_reg>;
+		levelshifter-supply = <&joystick_levelshifter_reg>;
+
+		moorechip,layout-nintendo;
+
+		pinctrl-names = "default";
+		pinctrl-0 = <&m0_key_default>, <&m1_key_default>;
+
+		m0_key-gpio = <&tlmm 3 GPIO_ACTIVE_LOW>;
+		m1_key-gpio = <&tlmm 7 GPIO_ACTIVE_LOW>;
+	};
+};

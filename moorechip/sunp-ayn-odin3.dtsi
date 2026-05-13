@@ -1,0 +1,43 @@
+#include "../qcom/sun-qrd-sku1-v8.dtsi"
+#include "sunp-moorechip-joystick.dtsi"
+#include "sunp-moorechip-thermal.dtsi"
+#include "sunp-moorechip-rpmh.dtsi"
+
+&sdhc_2 {
+	cd-gpios = <&tlmm 55 GPIO_ACTIVE_LOW>;
+	cd-debounce-delay-ms = <3000>;
+	post-power-on-delay-ms = <200>;
+};
+
+&qupv3_se4_spi {
+	status = "disabled";
+};
+
+&pcie0 {
+	qcom,no-client-based-bw-voting;
+};
+
+&pmih010x_haptics {
+	qcom,lra-period-us = <7692>;
+};
+
+&qupv3_se5_i2c {
+	status = "disabled";
+};
+
+&redriver {
+	status = "disabled";
+};
+
+&usb0 {
+	/delete-property/ ssusb_redriver;
+	qcom,wcd_usbss = <&wcd_usbss>;
+};
+
+/*
+&wlan_peach {
+	/delete-property/ nvmem-cells;
+	/delete-property/ nvmem-cell-names;
+	/delete-property/ wcal-pbs-supply;
+};
+*/
