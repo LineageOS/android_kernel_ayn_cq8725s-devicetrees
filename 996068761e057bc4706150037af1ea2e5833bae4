@@ -16,6 +16,24 @@
       "message": "qcom/display/display/dsi-panel-icna3520-1080p-dsc-cmd.dtsi shouldn\u0027t be executable",
       "revId": "996068761e057bc4706150037af1ea2e5833bae4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c6c1589_b2793f56",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-10-15T20:48:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a91573b9_48a6e7d6",
+      "revId": "996068761e057bc4706150037af1ea2e5833bae4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
