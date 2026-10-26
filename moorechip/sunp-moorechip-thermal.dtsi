@@ -278,6 +278,7 @@
 	};
 
 	gpuss-0 {
+		polling-delay-passive = <250>;
 		trips {
 			thermal-engine-config {
 				temperature = <125000>;
@@ -384,6 +385,7 @@
 	};
 
 	gpuss-1 {
+		polling-delay-passive = <250>;
 		trips {
 			thermal-engine-config {
 				temperature = <125000>;
